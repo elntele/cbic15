@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="C:/Users/jorge/Desktop/rural 2/2017.2/tcc/bibliotecas/commons-math3-3.6.1-bin/commons-math3-3.6.1/commons-math3-3.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jorge/Desktop/rural 2/2017.2/tcc/bibliotecas/commons-math3-3.6.1-bin/commons-math3-3.6.1/commons-math3-3.6.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jorge/Desktop/rural 2/2017.2/tcc/bibliotecas/commons-math3-3.6.1-bin/commons-math3-3.6.1/commons-math3-3.6.1-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jorge/Desktop/rural 2/2017.2/tcc/bibliotecas/commons-math3-3.6.1-bin/commons-math3-3.6.1/commons-math3-3.6.1-tests.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jorge/Desktop/rural 2/2017.2/tcc/bibliotecas/commons-math3-3.6.1-bin/commons-math3-3.6.1/commons-math3-3.6.1-test-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jorge/Desktop/rural 2/2017.2/tcc/bibliotecas/commons-math3-3.6.1-bin/commons-math3-3.6.1/commons-math3-3.6.1-tools.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jorge/Desktop/rural 2/2017.2/tcc/bibliotecas/jtransforms-2.4.0-sources.jar/jtransforms-2.4.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jorge/Desktop/rural 2/2017.2/tcc/bibliotecas/junit.jar/junit.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jorge/Desktop/rural 2/2017.2/tcc/bibliotecas/com.lowagie.text-2.1.7.jar/com.lowagie.text-2.1.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jorge/Desktop/rural 2/2017.2/tcc/bibliotecas/jfreechart-1.0.6.jar/jfreechart-1.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jorge/Desktop/rural 2/2017.2/tcc/bibliotecas/jcommon-1.0.23/jcommon-1.0.23/jcommon-1.0.23.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
