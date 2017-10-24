@@ -16,8 +16,10 @@
 package cbic15;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Vector;
+
 
 /**
  * 
@@ -26,13 +28,13 @@ import java.util.Vector;
  */
 public class Kmeans {
 	private int k;
-
+	
 	private List<Pattern> patterns;
 
 	private Pattern[] centroids;// declarando mas sem iniciar um array do tipo
 								// Pattern
-	private List <Integer> lisItaration = new ArrayList<>();
-	
+	//private List <Integer> lisItaration = new ArrayList<>();
+	private int iterationCount;
 
 	/**
 	 * Construtor da classe.
@@ -240,16 +242,18 @@ public class Kmeans {
 					break;
 				}
 			}
+			iterationCopy=iteration;
 			// para porque atingiu o max interation ou pq não encontrou pelo
 			// menos um centroid centroid do array
 			// (atributo) centroids, que seja diferente da lista de centroids
 			// anterior. ou seja, pelo menos um
 			// tem que ser diferente se não para o loop principal antes de
 			// atingir a maxInteration
+			
 			if (stop) {
 				break;
 			}
-			iterationCopy=iteration;
+			
 		}
 
 //		int i = 0;
@@ -261,7 +265,7 @@ public class Kmeans {
 //			System.out.println();
 //			i++;
 //		}
-		this.lisItaration.add(iterationCopy);
+		this.iterationCount = iterationCopy;
 		return clustters;
 	}
 	
@@ -271,8 +275,8 @@ public class Kmeans {
 	 */
 	
 
-	public List<Integer> getLisItaration() {
-		return lisItaration;
+	public int getCountItaration() {
+		return iterationCount;
 	}
 
 	/**
