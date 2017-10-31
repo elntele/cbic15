@@ -30,6 +30,8 @@ public class Pattern {
 	private double[] variables;
 	
 	private ComplexNetwork cn;
+	
+	private int id;
 
 	/**
 	 * Construtor da classe.
@@ -141,5 +143,15 @@ public class Pattern {
 	public void setCn(ComplexNetwork cn) {
 		this.cn = cn;
 	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	
 
 }

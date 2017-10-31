@@ -126,7 +126,7 @@ public class GmlDao implements IGmlDao {
 	}
 
 	public GmlData loadGmlData(String path) {
-		return loadGmlData(path, false);
+		return loadGmlData(path, true);// precisa colocar pra false se for pra remover nós isolados do gml
 	}
 	
 	public GmlData loadGmlData(String path, boolean allowIslands) {
@@ -431,7 +431,9 @@ public class GmlDao implements IGmlDao {
 
 	public static void main(String[] args) {
 		GmlDao dao = new GmlDao();
-		GmlData data = dao.loadGmlData("C:\\doutorado\\datasets\\internet topology\\Abilene.gml");
+		//GmlData data = dao.loadGmlData("C:\\doutorado\\datasets\\internet topology\\Abilene.gml");
+		GmlData data = dao.loadGmlData("C:/Users/jorge/workspace/ClusterPe/src/MunicipiosDePernambucoTec.RedesFinalizado.gml");
+//		GmlData data = dao.loadGmlData("C:/Users/jorge/workspace/ClusterPe/src/graph2.gml");
 		System.out.println(data.getInformations().get("Network"));
 		System.out.println(data.getNodes().size());
 		System.out.println(data.getEdges().size());

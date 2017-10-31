@@ -586,5 +586,6 @@ public class GmlData implements Cloneable {
 	public void setOxcIsolationFactor(double oxcIsolationFactor) {
 		this.oxcIsolationFactor = oxcIsolationFactor;
 	}
+	
 
 }
