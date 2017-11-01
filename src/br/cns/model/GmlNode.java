@@ -40,6 +40,13 @@ public class GmlNode {
 	
 	private String shortName;
 	
+	private double  idh;
+	
+	private double gine;
+	
+	private double pib;
+	
+	
 	private Map<String, String> informations = new HashMap<String, String>();
 	
 	/* (non-Javadoc)
@@ -262,4 +269,29 @@ public class GmlNode {
 		this.informations = informations;
 	}
 
+	public double getIdh() {
+		return idh;
+	}
+
+	public void setIdh(double idh) {
+		this.idh = idh;
+	}
+
+	public double getGine() {
+		return gine;
+	}
+
+	public void setGine(double gine) {
+		this.gine = gine;
+	}
+
+	public double getPib() {
+		return pib;
+	}
+
+	public void setPib(double pib) {
+		this.pib = pib;
+	}
+
+	
 }

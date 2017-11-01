@@ -66,11 +66,11 @@ public class GmlDao implements IGmlDao {
 			content.append(TAB_SYMBOL + TAB_SYMBOL + "Country \"" + node.getCountry() + "\"\n");
 			content.append(TAB_SYMBOL + TAB_SYMBOL + "Internal " + node.getInternal() + "\n");
 			content.append(TAB_SYMBOL + TAB_SYMBOL + "Population " + node.getPopulation() + "\n");
-			
+
 			for (String key : node.getInformations().keySet()) {
 				content.append(TAB_SYMBOL + TAB_SYMBOL + key + " \"" + node.getInformations().get(key) + "\"\n");
 			}
-			
+
 			content.append(TAB_SYMBOL + "]\n");
 		}
 
@@ -79,13 +79,13 @@ public class GmlDao implements IGmlDao {
 			content.append(TAB_SYMBOL + TAB_SYMBOL + "source " + edge.getSource().getId() + "\n");
 			content.append(TAB_SYMBOL + TAB_SYMBOL + "target " + edge.getTarget().getId() + "\n");
 			content.append(TAB_SYMBOL + TAB_SYMBOL + "LinkLabel \"" + edge.getLabel() + "\"\n");
-			
+
 			if (edge.getInformations() != null) {
 				for (String key : edge.getInformations().keySet()) {
 					content.append(TAB_SYMBOL + TAB_SYMBOL + key + " \"" + edge.getInformations().get(key) + "\"\n");
 				}
 			}
-			
+
 			content.append(TAB_SYMBOL + "]\n");
 		}
 
@@ -126,9 +126,10 @@ public class GmlDao implements IGmlDao {
 	}
 
 	public GmlData loadGmlData(String path) {
-		return loadGmlData(path, true);// precisa colocar pra false se for pra remover nós isolados do gml
+		return loadGmlData(path, true);// precisa colocar pra false se for pra
+										// remover nós isolados do gml
 	}
-	
+
 	public GmlData loadGmlData(String path, boolean allowIslands) {
 		GmlData data = new GmlData();
 		int state = 0;
@@ -172,7 +173,8 @@ public class GmlDao implements IGmlDao {
 							infos.put(i, node.getInformations().get(i));
 						}
 						boolean added = data.addNode(node.getId(), node.getLabel(), node.getCountry(),
-								node.getLongitude(), node.getLatitude(), node.getInternal(), infos, node.getPopulation());
+								node.getLongitude(), node.getLatitude(), node.getInternal(), infos,
+								node.getPopulation());
 						if (added) {
 							if (node.getLongitude() > data.getMaxLongitude()) {
 								data.setMaxLongitude(node.getLongitude());
@@ -206,7 +208,7 @@ public class GmlDao implements IGmlDao {
 							node.setPopulation(Long.parseLong(parts[1]));
 						} else if (!parts[0].trim().equals("")) {
 							node.getInformations().put(parts[0], parts[1]);
-						} 
+						}
 					}
 					break;
 				case 2:
@@ -229,7 +231,7 @@ public class GmlDao implements IGmlDao {
 							edge.setLabel(parts[1]);
 						} else if (!parts[0].trim().equals("")) {
 							edge.getInformations().put(parts[0], parts[1]);
-						} 
+						}
 					}
 					break;
 				}
@@ -347,7 +349,13 @@ public class GmlDao implements IGmlDao {
 						node.setLatitude(Double.parseDouble(parts[1]));
 					} else if (!parts[0].trim().equals("")) {
 						node.getInformations().put(parts[0], parts[1]);
-					} 
+					} else if (parts[0].equals("IDH")) {
+						node.setIdh(Double.parseDouble(parts[1]));
+					}else if (parts[0].equals("GINI")) {
+						node.setGine(Double.parseDouble(parts[1]));
+					}else if (parts[0].equals("PIB")) {
+						node.setPib(Double.parseDouble(parts[1]));
+					}
 				}
 				break;
 			case 2:
@@ -370,12 +378,12 @@ public class GmlDao implements IGmlDao {
 						edge.setLabel(parts[1]);
 					} else if (!parts[0].trim().equals("")) {
 						edge.getInformations().put(parts[0], parts[1]);
-					} 
+					}
 				}
 				break;
 			}
 		}
-		
+
 		data.setName((data.getInformations().get("GeoLocation") + " " + data.getInformations().get("Network")).trim());
 
 		boolean achou = false;
@@ -431,9 +439,12 @@ public class GmlDao implements IGmlDao {
 
 	public static void main(String[] args) {
 		GmlDao dao = new GmlDao();
-		//GmlData data = dao.loadGmlData("C:\\doutorado\\datasets\\internet topology\\Abilene.gml");
-		GmlData data = dao.loadGmlData("C:/Users/jorge/workspace/ClusterPe/src/MunicipiosDePernambucoTec.RedesFinalizado.gml");
-//		GmlData data = dao.loadGmlData("C:/Users/jorge/workspace/ClusterPe/src/graph2.gml");
+		// GmlData data = dao.loadGmlData("C:\\doutorado\\datasets\\internet
+		// topology\\Abilene.gml");
+		GmlData data = dao
+				.loadGmlData("C:/Users/jorge/workspace/ClusterPe/src/MunicipiosDePernambucoTec.RedesFinalizado.gml");
+		// GmlData data =
+		// dao.loadGmlData("C:/Users/jorge/workspace/ClusterPe/src/graph2.gml");
 		System.out.println(data.getInformations().get("Network"));
 		System.out.println(data.getNodes().size());
 		System.out.println(data.getEdges().size());
