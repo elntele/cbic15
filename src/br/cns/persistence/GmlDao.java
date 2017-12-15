@@ -400,7 +400,7 @@ public class GmlDao implements IGmlDao {
 				isolados.add(nodeAux);
 			}
 		}
-		data.getNodes().removeAll(isolados);
+	//	data.getNodes().removeAll(isolados);// jorge removeu pra que não remova os nós isolados.
 		// colocar novos ids para os nós
 		int newId = 0;
 		Map<Integer, Integer> idMap = new HashMap<Integer, Integer>();
