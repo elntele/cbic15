@@ -172,6 +172,13 @@ public class GmlData implements Cloneable {
 				distances[j][i] = distances[i][j];
 			}
 		}
+//		//jorge dividindo a matriz
+//		for (int i=0;i<distances.length;i++){
+//			for (int j=0;j<distances.length;j++){
+//				distances[i][j]=distances[i][j]/2;
+//			}
+//		}
+		
 		return distances;
 	}
 

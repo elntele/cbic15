@@ -43,6 +43,7 @@ public class Kmeans {
 		this.k = k;
 		this.patterns = patterns;
 	}
+	
 
 	public Pattern[] getNearestPatternsFromCentroid() {
 		Pattern[] nearestPatterns = new Pattern[centroids.length];
