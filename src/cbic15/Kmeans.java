@@ -63,6 +63,27 @@ public class Kmeans {
 
 		return nearestPatterns;
 	}
+	
+	public Pattern[] getNearestPatternsFromCentroid(List<Pattern>[] cluster,Pattern[] centroids) {
+		Pattern[] nearestPatterns = new Pattern[centroids.length];
+		// tem que haver uma cardinalidade, o centroide 0 do array de centroide tem que esta
+		// na lista 0 do array de listas cluster
+		int i = 0;
+		for (Pattern c : centroids) {
+			double minDistance = Double.MAX_VALUE;
+			for (Pattern p : cluster[i]) {
+				double d = p.euclidianDistance(c);
+				if (d < minDistance) {
+					nearestPatterns[i] = p;
+					minDistance = d;
+				}
+			}
+			i++;
+		}
+
+		return nearestPatterns;
+	}
+	
 
 	public List<Pattern>[] execute() {
 		return execute(10000);
