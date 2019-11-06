@@ -19,6 +19,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Vector;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 /**
@@ -39,10 +41,18 @@ public class Kmeans {
 	/**
 	 * Construtor da classe.
 	 */
-	public Kmeans(int k, List<Pattern> patterns) {
+	
+	public Kmeans(@JsonProperty("k")int k,@JsonProperty("patterns") List<Pattern> patterns) {
 		this.k = k;
 		this.patterns = patterns;
 	}
+//	/**
+//	 * construtor vazio colocado apenas por causa do mapeamento do json Jackson
+//	 * para a parte de paralelistmo, antes isso não existia no projeto, não use para outra coisa
+//	 */
+//	public Kmeans() {
+//	
+//	}
 	
 
 	public Pattern[] getNearestPatternsFromCentroid() {
@@ -317,4 +327,38 @@ public class Kmeans {
 	public void setCentroids(Pattern[] centroids) {
 		this.centroids = centroids;
 	}
+
+	/**
+	 * gerandop get e set para o json
+	 */
+	public int getK() {
+		return k;
+	}
+
+
+	public void setK(int k) {
+		this.k = k;
+	}
+
+
+	public List<Pattern> getPatterns() {
+		return patterns;
+	}
+
+
+	public void setPatterns(List<Pattern> patterns) {
+		this.patterns = patterns;
+	}
+
+
+	public int getIterationCount() {
+		return iterationCount;
+	}
+
+
+	public void setIterationCount(int iterationCount) {
+		this.iterationCount = iterationCount;
+	}
+	
+	
 }

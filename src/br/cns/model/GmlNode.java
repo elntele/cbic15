@@ -16,6 +16,8 @@
 package br.cns.model;
 
 import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
 /**
@@ -37,19 +39,20 @@ public class GmlNode {
 	private int internal;
 
 	private long population;
-	
+
 	private String shortName;
-	
-	private double  idh;
-	
+
+	private double idh;
+
 	private double gine;
-	
+
 	private double pib;
-	
-	
+
 	private Map<String, String> informations = new HashMap<String, String>();
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -67,7 +70,9 @@ public class GmlNode {
 	 * @param latitude
 	 * @param internal
 	 */
-	public GmlNode(int id, String label, String country, double longitude, double latitude, int internal, long population) {
+//	@JsonCreator
+	public GmlNode(@JsonProperty("id")int id, @JsonProperty("label")String label,@JsonProperty("country") String country,@JsonProperty("longitude") double longitude, @JsonProperty("latitude")double latitude,@JsonProperty("internal")int internal,
+			@JsonProperty("population") long population) {
 		super();
 		this.id = id;
 		this.label = label;
@@ -83,14 +88,24 @@ public class GmlNode {
 	 * 
 	 * @param id
 	 */
+
 	public GmlNode(int id) {
 		super();
 		this.id = id;
 		this.latitude = 181;
 		this.longitude = 181;
 	}
-	
-	public boolean visible(){
+
+//	/**
+//	 * construtor vazio colocado apenas por causa do mapeamento do json Jackson para
+//	 * a parte de paralelistmo, antes isso não existia no projeto, não use para
+//	 * outra coisa
+//	 */
+//	public GmlNode() {
+//
+//	}
+
+	public boolean visible() {
 		return getLongitude() < 181;
 	}
 
@@ -104,8 +119,7 @@ public class GmlNode {
 	/**
 	 * Altera o valor do atributo id
 	 * 
-	 * @param id
-	 *            O valor para setar em id
+	 * @param id O valor para setar em id
 	 */
 	public void setId(int id) {
 		this.id = id;
@@ -121,8 +135,7 @@ public class GmlNode {
 	/**
 	 * Altera o valor do atributo label
 	 * 
-	 * @param label
-	 *            O valor para setar em label
+	 * @param label O valor para setar em label
 	 */
 	public void setLabel(String label) {
 		this.label = label;
@@ -138,8 +151,7 @@ public class GmlNode {
 	/**
 	 * Altera o valor do atributo country
 	 * 
-	 * @param country
-	 *            O valor para setar em country
+	 * @param country O valor para setar em country
 	 */
 	public void setCountry(String country) {
 		this.country = country;
@@ -155,8 +167,7 @@ public class GmlNode {
 	/**
 	 * Altera o valor do atributo longitude
 	 * 
-	 * @param longitude
-	 *            O valor para setar em longitude
+	 * @param longitude O valor para setar em longitude
 	 */
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
@@ -172,8 +183,7 @@ public class GmlNode {
 	/**
 	 * Altera o valor do atributo latitude
 	 * 
-	 * @param latitude
-	 *            O valor para setar em latitude
+	 * @param latitude O valor para setar em latitude
 	 */
 	public void setLatitude(double latitude) {
 		this.latitude = latitude;
@@ -189,14 +199,15 @@ public class GmlNode {
 	/**
 	 * Altera o valor do atributo internal
 	 * 
-	 * @param internal
-	 *            O valor para setar em internal
+	 * @param internal O valor para setar em internal
 	 */
 	public void setInternal(int internal) {
 		this.internal = internal;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
@@ -207,7 +218,9 @@ public class GmlNode {
 		return result;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
@@ -233,6 +246,7 @@ public class GmlNode {
 
 	/**
 	 * Altera o valor do atributo population
+	 * 
 	 * @param population O valor para setar em population
 	 */
 	public void setPopulation(long population) {
@@ -248,6 +262,7 @@ public class GmlNode {
 
 	/**
 	 * Altera o valor do atributo shortName
+	 * 
 	 * @param shortName O valor para setar em shortName
 	 */
 	public void setShortName(String shortName) {
@@ -263,6 +278,7 @@ public class GmlNode {
 
 	/**
 	 * Altera o valor do atributo informations
+	 * 
 	 * @param informations O valor para setar em informations
 	 */
 	public void setInformations(Map<String, String> informations) {
@@ -293,5 +309,4 @@ public class GmlNode {
 		this.pib = pib;
 	}
 
-	
 }

@@ -18,5 +18,8 @@
 	<classpathentry kind="lib" path="C:/Users/elnte/eclipse-workspace/cbic15/bibliotecas/jtransforms-2.4.0-sources.jar/jtransforms-2.4.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/elnte/eclipse-workspace/cbic15/bibliotecas/junit.jar/junit.jar"/>
 	<classpathentry kind="lib" path="C:/Users/elnte/eclipse-workspace/cbic15/bibliotecas/javax.xml.bind.jar"/>
+	<classpathentry kind="lib" path="C:/Users/elnte/eclipse-workspace/cbic15/bibliotecas/jackson-annotations-2.8.11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/elnte/eclipse-workspace/cbic15/bibliotecas/jackson-core-2.8.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/elnte/eclipse-workspace/cbic15/bibliotecas/jackson-databind-2.8.11.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -16,6 +16,8 @@
 package cbic15;
 
 import java.util.Arrays;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import br.cns.experiments.ComplexNetwork;
 
@@ -44,7 +46,8 @@ public class Pattern {
 	 * @param name
 	 * @param variables
 	 */
-	public Pattern(String name, double[] variables, ComplexNetwork cn) {
+	@JsonCreator
+	public Pattern(@JsonProperty("name")String name, @JsonProperty("variables")double[] variables,@JsonProperty("cn") ComplexNetwork cn) {
 		super();
 		this.name = name;
 		this.variables = variables;
