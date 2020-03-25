@@ -281,11 +281,7 @@ public class GmlDao implements IGmlDao {
 		return data;
 	}
 	
-<<<<<<< HEAD
-	
-	
-=======
->>>>>>> 2e8c7ebd0922dfbaf36e5875c3e3ac1f12a33a58
+
 	/**
 	 * metodo copiado do de loadGmlData exatamente igual, porem sem a 
 	 * parte que muda os ids autor jorge candeias
@@ -433,10 +429,7 @@ public class GmlDao implements IGmlDao {
 	
 	
 	
-<<<<<<< HEAD
-=======
-	
->>>>>>> 2e8c7ebd0922dfbaf36e5875c3e3ac1f12a33a58
+
 
 	public GmlData loadGmlDataFromContent(String content) {
 		GmlData data = new GmlData();
